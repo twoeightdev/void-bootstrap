@@ -1,0 +1,100 @@
+#!/bin/bash
+# https://github.com/hoaxdream
+# author: hoaxdream
+
+# clone needed repos
+install_suck()
+  {
+    cd ~/.config/dwm
+    make install
+    cd ~
+    cd ~/.config/st
+    make install
+    cd ~
+    cd ~/.config/dmenu
+    make install
+    cd ~
+    cd ~/.config/nnn
+    make install
+    cd ~
+  }
+
+# disable auto run of xdg to use .config/user-dir.dirs instead
+set_xdg() {
+  sed -i 's/enabled=True/enabled=False/g' /etc/xdg/user-dirs.conf
+}
+
+# disable watchdog
+set_watchdog() {
+  echo blacklist iTCO_wdt > /etc/modprobe.d/watchdog.conf
+  echo blacklist iTCO_vendor_support >> /etc/modprobe.d/watchdog.conf
+}
+
+# set nvidia early module loading
+set_nvidia() {
+  mkdir -p /etc/pacman.d/hooks
+  cat >/etc/pacman.d/hooks/nvidia.hook <<'EOF'
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Operation=Remove
+Type=Package
+Target=nvidia
+Target=linux
+
+[Action]
+Description=Update Nvidia module in initcpio
+Depends=mkinitcpio
+When=PostTransaction
+NeedsTargets
+Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /usr/bin/mkinitcpio -P'
+EOF
+}
+
+# use systemd instead of udev for silentboot
+set_initramfs() {
+  # add nvidia modules
+  sed -i 's/MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/g' /etc/mkinitcpio.conf
+  # change udev to systemd for silent boot
+  sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS=(base systemd autodetect modconf block filesystems keyboard fsck)/g' /etc/mkinitcpio.conf
+
+# generate mkinitcpio
+  mkinitcpio -p linux
+}
+
+# torrent setup with transmission-cli
+set_transmission() {
+  sed -i 's/User=transmission/User=hoaxdream/g' /usr/lib/systemd/system/transmission.service
+}
+
+# must be run after running suckpatch then reboot
+install_done() {
+  echo "fsck-root.service: Edit with sudo -E systemctl edit --full systemd-fsck-root.service"
+  echo "fsck@.service: Edit with sudo -E systemctl edit --full systemd-fsck@.service"
+  echo " "
+cat << EOF
+Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/lib/systemd/systemd-fsck
+StandardOutput=null
+StandardError=journal+console
+TimeoutSec=0
+EOF
+  echo "Reboot then run the final script suckpatch and startx!"
+}
+
+echo 'install suck'
+install_suck
+echo 'xdg-user-dir'
+set_xdg
+echo 'Watchdog'
+set_watchdog
+echo 'nvidia modules'
+set_nvidia
+echo 'initramfs'
+set_initramfs
+echo 'torrent'
+set_transmission
+echo 'NOTE!'
+install_done
