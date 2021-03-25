@@ -11,38 +11,6 @@ install_aur()
     cd  yay
     makepkg -sci
   }
-# dot manage with git bare
-install_dots()
-  {
-    cd ~
-    mkdir ~/.config
-    chmod 700 ~/.config
-    echo "dots" >> .gitignore
-    git clone --bare https://github.com/hoaxdream/dots.git $HOME/.config/dots
-    git --git-dir=$HOME/.config/dots/ --work-tree=$HOME checkout
-    git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
-  }
-# clone needed repos
-install_repos()
-  {
-    git clone https://git.suckless.org/dwm ~/.config/dwm
-    cd ~/.config/dwm
-    make
-    cd ~
-    git clone https://git.suckless.org/st ~/.config/st
-    cd ~/.config/st
-    make
-    cd ~
-    git clone https://git.suckless.org/dmenu ~/.config/dmenu
-    cd ~/.config/dmenu
-    make
-    cd ~
-    git clone https://github.com/jarun/nnn ~/.config/nnn
-    cd ~/.config/nnn
-    make O_NERD=1
-    cd ~
-    git clone https://github.com/hoaxdream/startpage ~/.config/startpage
-  }
 # arch packages installation
 install_pkgs()
   {
@@ -71,28 +39,11 @@ install_pkgs()
     # emoji libxft-bgra
     yay --needed --noconfirm -Syu $pkgs
     yes | yay -S libxft-bgra-git
-    # user daemons
-    touch ~/.config/mpd/playlists
-    systemctl --user enable mpd
-  }
-# cleanup
-clean_up()
-  {
-    mkdir ~/.config/dl
-    rm ~/.bash_logout
-    rm ~/.bash_profile
-    rm ~/.bashrc
-    rm ~/.zshrc
   }
 
 echo 'yay aur helper'
 install_aur
-echo 'git bare dotfiles'
-install_dots
-echo 'clone repos'
-install_repos
 echo 'install pkgs'
 install_pkgs
-echo 'cleanup'
-clean_up
-echo 'Run sudo ./postinstall then reboot.'
+
+echo 'Packages installation completed'
