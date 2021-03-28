@@ -30,10 +30,10 @@ install_pkgs()
     pkgs="$pkgs noto-fonts noto-fonts-emoji ttf-liberation"
     # others
     pkgs="$pkgs youtube-dl ffmpeg maim sxiv xwallpaper imagemagick"
-    pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp easytag"
+    pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler"
-    pkgs="$pkgs dunst libnotify gucharmap"
-    pkgs="$pkgs firefox steam gimp htop transmission-cli"
+    pkgs="$pkgs dunst libnotify gucharmap htop"
+    pkgs="$pkgs firefox steam signal-desktop transmission-cli"
     # aur packages
     pkgs="$pkgs tremc"
     # emoji libxft-bgra
@@ -46,4 +46,4 @@ install_aur
 echo 'install pkgs'
 install_pkgs
 
-echo 'Packages installation completed'
+echo 'Packages installation completed please reboot'

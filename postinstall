@@ -2,23 +2,6 @@
 # https://github.com/hoaxdream
 # author: hoaxdream
 
-# clone needed repos
-install_suck()
-  {
-    cd ~/.config/dwm
-    make install
-    cd ~
-    cd ~/.config/st
-    make install
-    cd ~
-    cd ~/.config/dmenu
-    make install
-    cd ~
-    cd ~/.config/nnn
-    make install
-    cd ~
-  }
-
 # disable auto run of xdg to use .config/user-dir.dirs instead
 set_xdg() {
   sed -i 's/enabled=True/enabled=False/g' /etc/xdg/user-dirs.conf
@@ -84,8 +67,6 @@ EOF
   echo "Reboot then run the final script suckpatch and startx!"
 }
 
-echo 'install suck'
-install_suck
 echo 'xdg-user-dir'
 set_xdg
 echo 'Watchdog'
