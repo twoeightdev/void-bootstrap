@@ -52,18 +52,18 @@ int_transmission()
 # cleanup
 int_cleanup()
   {
-    rm ~/.bash_logout
-    rm ~/.bash_profile
-    rm ~/.bashrc
-    rm ~/.zshrc
-    rm -rf ~/Desktop
-    rm -rf ~/Documents
-    rm -rf ~/Downloads
-    rm -rf ~/Music
-    rm -rf ~/Pictures
-    rm -rf ~/Public
-    rm -rf ~/Templates
-    rm -rf ~/Videos
+    rm /home/jeremy/.bash_logout
+    rm /home/jeremy/.bash_profile
+    rm /home/jeremy/.bashrc
+    rm /home/jeremy/.zshrc
+    rm -rf /home/jeremy/Desktop
+    rm -rf /home/jeremy/Documents
+    rm -rf /home/jeremy/Downloads
+    rm -rf /home/jeremy/Music
+    rm -rf /home/jeremy/Pictures
+    rm -rf /home/jeremy/Public
+    rm -rf /home/jeremy/Templates
+    rm -rf /home/jeremy/Videos
   }
 # reboot the run this manually
 int_done()
@@ -83,6 +83,8 @@ EOF
     echo "Reboot then manually configure systemd-fsck-root.service and systemd-fsck@.service then reboot and startx"
   }
 
+echo 'xdg'
+int_xdg
 echo 'watchdog'
 int_watchdog
 echo 'nvidia modules'
