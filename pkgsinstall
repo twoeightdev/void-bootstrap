@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 # https://github.com/hoaxdream
 # author: hoaxdream
 
 # arch aur helper yay
-install_aur()
+inst_aur()
   {
     cd /tmp/
     curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
@@ -12,7 +12,7 @@ install_aur()
     makepkg -sci
   }
 # arch packages installation
-install_pkgs()
+inst_pkgs()
   {
     # xorg
     pkgs="xorg-server xorg-xwininfo xorg-xprop xorg-xdpyinfo"
@@ -26,24 +26,29 @@ install_pkgs()
     # audio
     pkgs="$pkgs pulseaudio-alsa pulsemixer pamixer"
     # fonts
-    pkgs="$pkgs ttf-joypixels ttf-dejavu ttf-nerd-fonts-symbols"
-    pkgs="$pkgs noto-fonts noto-fonts-emoji ttf-liberation"
+    pkgs="$pkgs ttf-joypixels ttf-dejavu ttf-nerd-fonts-symbols ttf-roboto-mono"
+    pkgs="$pkgs noto-fonts noto-fonts-emoji ttf-liberation ttf-ibm-plex"
     # others
     pkgs="$pkgs youtube-dl ffmpeg maim sxiv xwallpaper imagemagick"
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
-    pkgs="$pkgs zathura zathura-pdf-mupdf poppler"
-    pkgs="$pkgs dunst libnotify gucharmap htop"
-    pkgs="$pkgs firefox steam signal-desktop transmission-cli"
+    pkgs="$pkgs zathura zathura-pdf-mupdf poppler python-adblock cronie"
+    pkgs="$pkgs dunst libnotify gucharmap htop discord gparted"
+    pkgs="$pkgs qutebrowser steam signal-desktop transmission-cli"
+    daemon="cronie"
     # aur packages
     pkgs="$pkgs tremc"
     # emoji libxft-bgra
     yay --needed --noconfirm -Syu $pkgs
     yes | yay -S libxft-bgra-git
+    # system daemon
+    systemctl enable $daemon
+    # user daemon
+    systemctl --user enable mpd
   }
 
 echo 'yay aur helper'
-install_aur
-echo 'install pkgs'
-install_pkgs
+inst_aur
+echo 'install packages'
+inst_pkgs
 
 echo 'Packages installation completed please reboot'
