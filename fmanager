@@ -1,0 +1,30 @@
+#!/bin/sh
+# https://github.com/hoaxdream
+# author: hoaxdream
+
+# cp and mv progress
+int_coreutil()
+  {
+    cd ~/.config/work
+    wget http://ftp.gnu.org/gnu/coreutils/coreutils-8.32.tar.xz
+    tar xvJf coreutils-8.32.tar.xz
+    cd coreutils-8.32/
+    wget https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-0.8-8.32.patch
+    patch -p1 -i advcpmv-0.8-8.32.patch
+    ./configure
+    make
+    sudo mv ./src/cp /usr/local/bin/cpg
+    sudo mv ./src/mv /usr/local/bin/mvg
+  }
+
+# nnn
+int_nnn()
+  {
+    cd ~/.config/nnn
+    make O_NERD=1 && sudo make install
+  }
+
+echo 'cp and mv progress'
+int_coreutil
+echo 'nnn file manager'
+int_nnn
