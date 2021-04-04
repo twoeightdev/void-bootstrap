@@ -32,7 +32,7 @@ inst_pkgs()
     pkgs="$pkgs youtube-dl ffmpeg maim sxiv xwallpaper imagemagick"
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python-adblock cronie"
-    pkgs="$pkgs dunst libnotify gucharmap htop discord gparted"
+    pkgs="$pkgs dunst libnotify gucharmap htop discord"
     pkgs="$pkgs qutebrowser steam signal-desktop transmission-cli"
     daemon="cronie"
     # aur packages
