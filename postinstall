@@ -98,6 +98,8 @@ echo 'initramfs'
 int_initramfs
 echo 'torrent'
 int_transmission
+echo 'picom'
+int_picom
 echo 'clean up'
 int_cleanup
 echo 'NOTE!'
