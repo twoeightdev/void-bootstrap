@@ -16,15 +16,21 @@ int_coreutil()
     sudo mv ./src/cp /usr/local/bin/cpg
     sudo mv ./src/mv /usr/local/bin/mvg
   }
-
 # nnn
 int_nnn()
   {
     cd ~/.config/nnn
     make O_NERD=1 && sudo make install
   }
+# mpd user daemon
+int_mpd()
+  {
+    systemctl --user enable mpd
+  }
 
 echo 'cp and mv progress'
 int_coreutil
 echo 'nnn file manager'
 int_nnn
+echo 'mpd'
+int_mpd

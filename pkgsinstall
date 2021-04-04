@@ -42,8 +42,6 @@ inst_pkgs()
     yes | yay -S libxft-bgra-git
     # system daemon
     systemctl enable $daemon
-    # user daemon
-    systemctl --user enable mpd
   }
 
 echo 'yay aur helper'

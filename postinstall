@@ -49,6 +49,11 @@ int_transmission()
   {
     sed -i 's/User=transmission/User=jeremy/g' /usr/lib/systemd/system/transmission.service
   }
+# picom
+int_picom()
+  {
+    cp /home/jeremy/.config/work/backups/picom.conf /etc/xdg/picom.conf
+  }
 # cleanup
 int_cleanup()
   {
