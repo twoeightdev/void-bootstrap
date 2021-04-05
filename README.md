@@ -12,8 +12,9 @@ This is my personal script used after a fresh arch linux installation.
   - $ ./dotsetup
   - $ sudo ./postinstall
   - $ reboot
-  - $ startx
   - $ sudo -E systemctl edit --full systemd-fsck-root.service
   - $ sudo -E systemctl edit --full systemd-fsck@.service
+  - $ reboot
+  - $ ./fmanager
   - $ reboot
 ```

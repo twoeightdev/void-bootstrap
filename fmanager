@@ -27,6 +27,12 @@ int_mpd()
   {
     systemctl --user enable mpd
   }
+# cron
+int_cron()
+  {
+    mkdir ~/.config/cron
+    cp ~/.config/work/backups/cronsaved ~/.config/cron/cronsaved
+  }
 
 echo 'cp and mv progress'
 int_coreutil
@@ -34,3 +40,5 @@ echo 'nnn file manager'
 int_nnn
 echo 'mpd'
 int_mpd
+echo 'cron'
+int_cron
