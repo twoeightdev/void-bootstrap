@@ -10,6 +10,8 @@ This is my personal script used after a fresh arch linux installation.
   - $ ./pkgsinstall
   - $ reboot
   - $ ./dotsetup
+  - $ sudo ./partcore   # Run only for fresh disk
+  - $ sudo ./partdata   # Run only for fresh disk
   - $ sudo ./postinstall
   - $ reboot
   - $ sudo -E systemctl edit --full systemd-fsck-root.service

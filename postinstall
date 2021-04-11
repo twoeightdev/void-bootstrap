@@ -105,7 +105,7 @@ StandardOutput=null
 StandardError=journal+console
 TimeoutSec=0
 EOF
-    echo "Reboot then manually configure systemd-fsck-root.service and systemd-fsck@.service then reboot and startx"
+    echo "Reboot then manually configure systemd-fsck-root.service and systemd-fsck@.service then reboot"
   }
 
 echo 'xdg'
