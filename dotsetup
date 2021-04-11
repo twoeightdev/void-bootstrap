@@ -45,4 +45,4 @@ inst_repo
 echo 'clean'
 inst_mkd
 
-echo 'Run sudo ./postinstall then reboot'
+echo 'Run sudo ./partcore then sudo ./partdata for fresh disk, otherwise just run sudo ./postinstall then reboot'

@@ -34,6 +34,11 @@ inst_pkgs()
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop discord"
     pkgs="$pkgs qutebrowser steam signal-desktop transmission-cli"
+    # lib32's needed for lutris
+    pkgs="$pkgs wine-staging lib32-giflib lib32-libpng lib32-gnutls lib32-mpg123"
+    pkgs="$pkgs lib32-openal lib32-v4l-utils lib32-libpulse lib32-libjpeg-turbo"
+    pkgs="$pkgs lib32-libxcomposite lib32-libgcrypt lib32-libxinerama ocl-icd lib32-ocl-icd"
+    pkgs="$pkgs lib32-libxslt lib32-libva lib32-gtk3 lib32-gst-plugins-base-libs lutris"
     daemon="cronie"
     # aur packages
     pkgs="$pkgs tremc"
@@ -49,4 +54,4 @@ inst_aur
 echo 'install packages'
 inst_pkgs
 
-echo 'Packages installation completed please reboot'
+echo 'Packages installation completed please reboot and run ./dotsetup'
