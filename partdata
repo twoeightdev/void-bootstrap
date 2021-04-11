@@ -1,0 +1,12 @@
+#!/bin/sh
+
+(
+echo g
+echo n
+echo
+echo
+echo
+echo w
+) | fdisk /dev/sdb
+
+mkfs.ext4 /dev/sdb1

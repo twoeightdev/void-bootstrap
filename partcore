@@ -1,0 +1,12 @@
+#!/bin/sh
+
+(
+echo g
+echo n
+echo
+echo
+echo
+echo w
+) | fdisk /dev/nvme1n1
+
+mkfs.ext4 /dev/nvme1n1p1
