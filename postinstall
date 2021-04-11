@@ -1,6 +1,8 @@
 #!/bin/sh
 # https://github.com/hoaxdream
 # author: hoaxdream
+CORE_UUID=$(blkid -s UUID -o value /dev/nvme1n1p1)
+DATA_UUID=$(blkid -s UUID -o value /dev/sda1)
 
 # disable auto run of xdg to use .config/user-dir.dirs instead
 int_xdg()
@@ -54,6 +56,24 @@ int_picom()
   {
     cp /home/jeremy/.config/work/backups/picom.conf /etc/xdg/picom.conf
   }
+# prepare fstab
+int_fstab()
+  {
+    mkdir /media/
+    cd /media
+    mkdir core data
+    chown -R $USER:$USER /media/core/
+    chown -R $USER:$USER /media/data/
+  }
+# dump UUID to fstab
+int_uuid()
+  {
+echo "# /dev/nvme1n1p1
+UUID=$CORE_UUID /media/core ext4 rw,user,exec 0 0
+
+# /dev/sda1
+UUID=$DATA_UUID /media/data ext4 rw,user,exec 0 0" | tee -a /etc/fstab >/dev/null
+  }
 # cleanup
 int_cleanup()
   {
@@ -100,6 +120,10 @@ echo 'torrent'
 int_transmission
 echo 'picom'
 int_picom
+echo 'fstab'
+int_fstab
+echo 'uuid'
+int_uuid
 echo 'clean up'
 int_cleanup
 echo 'NOTE!'
