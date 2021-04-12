@@ -8,6 +8,6 @@ echo
 echo
 echo
 echo w
-) | fdisk /dev/sdb
+) | fdisk /dev/sda
 
-mkfs.ext4 /dev/sdb1
+mkfs.ext4 /dev/sda1
