@@ -4,6 +4,11 @@
 CORE_UUID=$(blkid -s UUID -o value /dev/nvme1n1p1)
 DATA_UUID=$(blkid -s UUID -o value /dev/sda1)
 
+# set java
+int_jav()
+  {
+    archlinux-java set java-11-openjdk
+  }
 # disable auto run of xdg to use .config/user-dir.dirs instead
 int_xdg()
   {
@@ -108,6 +113,8 @@ EOF
     echo "Reboot then manually configure systemd-fsck-root.service and systemd-fsck@.service then reboot"
   }
 
+echo 'java'
+int_jav
 echo 'xdg'
 int_xdg
 echo 'watchdog'

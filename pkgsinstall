@@ -33,7 +33,7 @@ inst_pkgs()
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop discord"
-    pkgs="$pkgs qutebrowser steam signal-desktop transmission-cli"
+    pkgs="$pkgs qutebrowser firefox steam transmission-cli"
     # lib32's needed for lutris
     pkgs="$pkgs wine-staging lib32-giflib lib32-libpng lib32-gnutls lib32-mpg123"
     pkgs="$pkgs lib32-openal lib32-v4l-utils lib32-libpulse lib32-libjpeg-turbo"
@@ -41,7 +41,7 @@ inst_pkgs()
     pkgs="$pkgs lib32-libxslt lib32-libva lib32-gtk3 lib32-gst-plugins-base-libs lutris"
     daemon="cronie"
     # aur packages
-    pkgs="$pkgs tremc"
+    pkgs="$pkgs tremc signal-cli siggo"
     # emoji libxft-bgra
     yay --needed --noconfirm -Syu $pkgs
     yes | yay -S libxft-bgra-git
