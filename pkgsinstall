@@ -33,7 +33,7 @@ inst_pkgs()
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop discord"
-    pkgs="$pkgs qutebrowser firefox steam transmission-cli"
+    pkgs="$pkgs qutebrowser qrencode steam transmission-cli"
     # lib32's needed for lutris
     pkgs="$pkgs wine-staging lib32-giflib lib32-libpng lib32-gnutls lib32-mpg123"
     pkgs="$pkgs lib32-openal lib32-v4l-utils lib32-libpulse lib32-libjpeg-turbo"
