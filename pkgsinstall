@@ -29,7 +29,7 @@ inst_pkgs()
     pkgs="$pkgs ttf-joypixels ttf-dejavu ttf-nerd-fonts-symbols ttf-roboto-mono"
     pkgs="$pkgs noto-fonts noto-fonts-emoji ttf-liberation ttf-ibm-plex"
     # others
-    pkgs="$pkgs youtube-dl ffmpeg maim sxiv xwallpaper imagemagick"
+    pkgs="$pkgs yt-dlp ffmpeg maim sxiv xwallpaper imagemagick"
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop discord"
