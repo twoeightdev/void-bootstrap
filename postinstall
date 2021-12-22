@@ -1,8 +1,11 @@
 #!/bin/sh
 # https://github.com/hoaxdream
 # author: hoaxdream
+# change USER=$(to your username)
+# change the value of User in int_transmission
 CORE_UUID=$(blkid -s UUID -o value /dev/nvme1n1p1)
 DATA_UUID=$(blkid -s UUID -o value /dev/sda1)
+USER=$(hoaxdream)
 
 # disable auto run of xdg to use .config/user-dir.dirs instead
 int_xdg()
@@ -49,12 +52,12 @@ int_initramfs()
 # set transmission user, change User to your username
 int_transmission()
   {
-    sed -i 's/User=transmission/User=jeremy/g' /usr/lib/systemd/system/transmission.service
+    sed -i 's/User=transmission/User=hoaxdream/g' /usr/lib/systemd/system/transmission.service
   }
 # picom
 int_picom()
   {
-    cp /home/jeremy/.config/work/backups/picom.conf /etc/xdg/picom.conf
+    cp /home/$USER/.config/work/backups/picom.conf /etc/xdg/picom.conf
   }
 # prepare fstab
 int_fstab()

@@ -41,10 +41,10 @@ inst_pkgs()
     pkgs="$pkgs lib32-libxslt lib32-libva lib32-gtk3 lib32-gst-plugins-base-libs lutris"
     daemon="cronie"
     # aur packages
-    apkgs="libxft-bgra-git tremc signal-cli siggo"
+    pkgs="$pkgs tremc signal-cli siggo"
     # emoji libxft-bgra
     yay --needed --noconfirm -Syu $pkgs
-    yes | yay -S $apkgs
+    yes | yay -S libxft-bgra-git
     # system daemon
     systemctl enable $daemon
   }
