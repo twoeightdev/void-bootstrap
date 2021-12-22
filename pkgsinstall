@@ -9,7 +9,7 @@ inst_aur()
     curl -LO https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
     tar xvzf yay.tar.gz
     cd  yay
-    makepkg -sci
+    makepkg -sci --noconfirm
   }
 # arch packages installation
 inst_pkgs()
@@ -41,10 +41,10 @@ inst_pkgs()
     pkgs="$pkgs lib32-libxslt lib32-libva lib32-gtk3 lib32-gst-plugins-base-libs lutris"
     daemon="cronie"
     # aur packages
-    pkgs="$pkgs tremc signal-cli siggo"
+    apkgs="libxft-bgra-git tremc signal-cli siggo"
     # emoji libxft-bgra
     yay --needed --noconfirm -Syu $pkgs
-    yes | yay -S libxft-bgra-git
+    yes | yay -S $apkgs
     # system daemon
     systemctl enable $daemon
   }

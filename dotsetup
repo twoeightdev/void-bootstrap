@@ -29,6 +29,12 @@ inst_repo()
     cd ~/.config/dmenu
     make && sudo make install
   }
+# fix alias
+inst_alias()
+  {
+    sed -i 's/cp="cpg -g"/cp="cp"/g' ~/.config/zsh/aliasrc
+    sed -i 's/mv="mvg -g"/mv="mv"/g' ~/.config/zsh/aliasrc
+  }
 # make directories
 inst_mkd()
   {
@@ -42,6 +48,8 @@ echo 'dotfiles'
 inst_dot
 echo 'repositories'
 inst_repo
+echo 'fix alias'
+inst_alias
 echo 'clean'
 inst_mkd
 

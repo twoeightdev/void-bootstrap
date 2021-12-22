@@ -22,6 +22,12 @@ int_nnn()
     cd ~/.config/nnn
     make O_NERD=1 && sudo make install
   }
+# fix alias
+int_fixalias()
+  {
+    sed -i 's/cp="cp"/cp="cpg -g"/g' ~/.config/zsh/aliasrc
+    sed -i 's/mv="mv"/mv="mvg -g"/g' ~/.config/zsh/aliasrc
+  }
 # mpd user daemon
 int_mpd()
   {
@@ -38,6 +44,8 @@ echo 'cp and mv progress'
 int_coreutil
 echo 'nnn file manager'
 int_nnn
+echo 'fix alias'
+int_fixalias
 echo 'mpd'
 int_mpd
 echo 'cron'
