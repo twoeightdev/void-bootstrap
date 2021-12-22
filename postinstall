@@ -77,18 +77,18 @@ UUID=$DATA_UUID /media/data ext4 rw,user,exec 0 0" | tee -a /etc/fstab >/dev/nul
 # cleanup
 int_cleanup()
   {
-    rm /home/jeremy/.bash_logout
-    rm /home/jeremy/.bash_profile
-    rm /home/jeremy/.bashrc
-    rm /home/jeremy/.zshrc
-    rm -rf /home/jeremy/Desktop
-    rm -rf /home/jeremy/Documents
-    rm -rf /home/jeremy/Downloads
-    rm -rf /home/jeremy/Music
-    rm -rf /home/jeremy/Pictures
-    rm -rf /home/jeremy/Public
-    rm -rf /home/jeremy/Templates
-    rm -rf /home/jeremy/Videos
+    rm /home/$USER/.bash_logout
+    rm /home/$USER/.bash_profile
+    rm /home/$USER/.bashrc
+    rm /home/$USER/.zshrc
+    rm -rf /home/$USER/Desktop
+    rm -rf /home/$USER/Documents
+    rm -rf /home/$USER/Downloads
+    rm -rf /home/$USER/Music
+    rm -rf /home/$USER/Pictures
+    rm -rf /home/$USER/Public
+    rm -rf /home/$USER/Templates
+    rm -rf /home/$USER/Videos
   }
 # reboot the run this manually
 int_done()
