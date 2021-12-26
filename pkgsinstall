@@ -34,6 +34,8 @@ inst_pkgs()
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop discord"
     pkgs="$pkgs qutebrowser qrencode steam transmission-cli"
+    # mail
+    pkgs="$pkgs neomutt notmuch isync msmtp"
     # lib32's needed for lutris
     pkgs="$pkgs wine-staging lib32-giflib lib32-libpng lib32-gnutls lib32-mpg123"
     pkgs="$pkgs lib32-openal lib32-v4l-utils lib32-libpulse lib32-libjpeg-turbo"
