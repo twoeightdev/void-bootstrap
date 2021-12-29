@@ -48,16 +48,6 @@ int_initramfs()
     # generate mkinitcpio
     mkinitcpio -p linux
   }
-# set transmission user, change User to your username
-int_transmission()
-  {
-    sed -i 's/transmission/'"$USER"'/g' /usr/lib/systemd/system/transmission.service
-  }
-# picom
-int_picom()
-  {
-    cp /home/$USER/.config/work/backups/picom.conf /etc/xdg/picom.conf
-  }
 # prepare fstab
 int_fstab()
   {
@@ -75,22 +65,6 @@ UUID=$CORE_UUID /media/core ext4 rw,user,exec 0 0
 
 # /dev/sda1
 UUID=$DATA_UUID /media/data ext4 rw,user,exec 0 0" | tee -a /etc/fstab >/dev/null
-  }
-# cleanup
-int_cleanup()
-  {
-    rm /home/$USER/.bash_logout
-    rm /home/$USER/.bash_profile
-    rm /home/$USER/.bashrc
-    rm /home/$USER/.zshrc
-    rm -rf /home/$USER/Desktop
-    rm -rf /home/$USER/Documents
-    rm -rf /home/$USER/Downloads
-    rm -rf /home/$USER/Music
-    rm -rf /home/$USER/Pictures
-    rm -rf /home/$USER/Public
-    rm -rf /home/$USER/Templates
-    rm -rf /home/$USER/Videos
   }
 # reboot the run this manually
 int_done()
@@ -118,15 +92,9 @@ echo 'nvidia modules'
 int_nvidia
 echo 'initramfs'
 int_initramfs
-echo 'torrent'
-int_transmission
-echo 'picom'
-int_picom
 echo 'fstab'
 int_fstab
 echo 'uuid'
 int_uuid
-echo 'clean up'
-int_cleanup
 echo 'NOTE!'
 int_done

@@ -39,6 +39,39 @@ int_cron()
     mkdir ~/.config/cron
     cp ~/.config/work/backups/cronsaved ~/.config/cron/cronsaved
   }
+# set transmission user, change User to your username
+int_transmission()
+  {
+    sudo sed -i 's/root/'"$USER"'/g' /usr/lib/systemd/system/transmission.service
+  }
+# picom
+int_picom()
+  {
+    sudo cp /home/$USER/.config/work/backups/picom.conf /etc/xdg/picom.conf
+  }
+# cleanup
+int_cleanup()
+  {
+    rm /home/$USER/.bash_logout
+    rm /home/$USER/.bash_profile
+    rm /home/$USER/.bashrc
+    rm /home/$USER/.zshrc
+    rm -rf /home/$USER/Desktop
+    rm -rf /home/$USER/Documents
+    rm -rf /home/$USER/Downloads
+    rm -rf /home/$USER/Music
+    rm -rf /home/$USER/Pictures
+    rm -rf /home/$USER/Public
+    rm -rf /home/$USER/Templates
+    rm -rf /home/$USER/Videos
+    mv /home/$USER/.cargo /home/$USER/.local/share/cargo
+    mv /home/$USER/.gnupg/* /home/$USER/.local/share/gnupg
+    mv /home/$USER/go /home/$USER/.local/share/go
+    mv /home/$USER/.gradle /home/$USER/.local/share/gradle
+    mv /home/$USER/.kotlin /home/$USER/.local/share/kotlin
+    rm -rf /home/$USER/.gnupg
+    mkdir -p /home/$USER/.local/share/mail/hoaxdream
+  }
 
 echo 'cp and mv progress'
 int_coreutil
@@ -50,3 +83,9 @@ echo 'mpd'
 int_mpd
 echo 'cron'
 int_cron
+echo 'torrent'
+int_transmission
+echo 'picom'
+int_picom
+echo 'clean up'
+int_cleanup
