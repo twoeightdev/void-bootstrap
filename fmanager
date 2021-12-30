@@ -49,6 +49,12 @@ int_picom()
   {
     sudo cp /home/$USER/.config/work/backups/picom.conf /etc/xdg/picom.conf
   }
+# Chown /media
+int_chown()
+  {
+    sudo chown -R $USER:$USER /media/core/
+    sudo chown -R $USER:$USER /media/data/
+  }
 # cleanup
 int_cleanup()
   {
@@ -87,5 +93,7 @@ echo 'torrent'
 int_transmission
 echo 'picom'
 int_picom
+echo 'chown'
+int_chown
 echo 'clean up'
 int_cleanup

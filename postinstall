@@ -4,7 +4,6 @@
 # change the value of User in int_transmission
 CORE_UUID=$(blkid -s UUID -o value /dev/nvme1n1p1)
 DATA_UUID=$(blkid -s UUID -o value /dev/sda1)
-USER=$(whoami)
 
 # disable auto run of xdg to use .config/user-dir.dirs instead
 int_xdg()
@@ -48,14 +47,12 @@ int_initramfs()
     # generate mkinitcpio
     mkinitcpio -p linux
   }
-# prepare fstab
-int_fstab()
+# make dir for games and data
+int_chdir()
   {
     mkdir /media/
     cd /media
     mkdir core data
-    chown -R $USER:$USER /media/core/
-    chown -R $USER:$USER /media/data/
   }
 # dump UUID to fstab
 int_uuid()
@@ -92,8 +89,8 @@ echo 'nvidia modules'
 int_nvidia
 echo 'initramfs'
 int_initramfs
-echo 'fstab'
-int_fstab
+echo 'directory created'
+int_chdir
 echo 'uuid'
 int_uuid
 echo 'NOTE!'
