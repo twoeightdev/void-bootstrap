@@ -1,6 +1,7 @@
 #!/bin/sh
 # https://github.com/hoaxdream
 # author: hoaxdream
+USER=$(whoami)
 
 # cp and mv progress
 int_coreutil()
