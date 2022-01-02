@@ -41,6 +41,16 @@ int_chown()
     sudo chown -R $USER:$USER /media/core/
     sudo chown -R $USER:$USER /media/data/
   }
+# cleanup
+int_cleanup()
+  {
+    rm /home/$USER/.bash_logout
+    rm /home/$USER/.bash_profile
+    rm /home/$USER/.bashrc
+    rm /home/$USER/.zshrc
+    rm /home/$USER/.inputrc
+    mkdir -p /home/$USER/.local/share/mail/hoaxdream
+  }
 
 echo 'cp and mv progress'
 int_coreutil
@@ -52,3 +62,5 @@ echo 'cron'
 int_cron
 echo 'chown'
 int_chown
+echo 'clean up'
+int_cleanup
