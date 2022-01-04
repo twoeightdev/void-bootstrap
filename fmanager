@@ -49,7 +49,14 @@ int_cleanup()
     rm /home/$USER/.bashrc
     rm /home/$USER/.zshrc
     rm /home/$USER/.inputrc
+    rm /home/$USER/.wget-hsts
+    rm -rf /home/$USER/.fontconfig
     mkdir -p /home/$USER/.local/share/mail/hoaxdream
+    mkdir -p /home/$USER/.config/dl/done
+    mkdir -p /home/$USER/.config/dl/music
+    mkdir -p /home/$USER/.config/dl/vids
+    mkdir -p /home/$USER/.config/dl/telegram
+    mkdir -p /home/$USER/.config/docs
   }
 
 echo 'cp and mv progress'
