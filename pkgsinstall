@@ -15,14 +15,14 @@ inst_pkgs()
     # audio
     pkgs="$pkgs pulseaudio alsa-plugins-pulseaudio pulsemixer pamixer"
     # fonts
-    pkgs="$pkgs nerd-fonts dejavu-fonts-ttf noto-fonts-ttf noto-fonts-emoji"
-    pkgs="$pkgs liberation-fonts-ttf font-inconsolata-otf"
+    pkgs="$pkgs dejavu-fonts-ttf noto-fonts-ttf noto-fonts-emoji"
+    pkgs="$pkgs liberation-fonts-ttf font-inconsolata-otf font-awesome"
     # others
     pkgs="$pkgs yt-dlp ffmpeg maim sxiv xwallpaper ImageMagick"
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils"
-    pkgs="$pkgs qutebrowser qrencode steam telegram-desktop"
+    pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop"
     pkgs="$pkgs base-devel libX11-devel libXft-devel libXinerama-devel"
     # mail
     pkgs="$pkgs neomutt notmuch isync msmtp"

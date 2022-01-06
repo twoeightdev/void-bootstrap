@@ -3,32 +3,6 @@
 # author: hoaxdream
 USER=$(whoami)
 
-# cp and mv progress
-int_coreutil()
-  {
-    cd ~/.config/work
-    wget http://ftp.gnu.org/gnu/coreutils/coreutils-9.0.tar.xz
-    tar xvJf coreutils-9.0.tar.xz
-    cd coreutils-9.0/
-    wget https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-0.9-9.0.patch
-    patch -p1 -i advcpmv-0.9-9.0.patch
-    ./configure
-    make
-    sudo mv ./src/cp /usr/local/bin/cpg
-    sudo mv ./src/mv /usr/local/bin/mvg
-  }
-# nnn
-int_nnn()
-  {
-    cd ~/.config/nnn
-    make O_NERD=1 && sudo make install
-  }
-# fix alias
-int_fixalias()
-  {
-    sed -i 's/cp="cp"/cp="cpg -g"/g' ~/.config/zsh/aliasrc
-    sed -i 's/mv="mv"/mv="mvg -g"/g' ~/.config/zsh/aliasrc
-  }
 # cron
 int_cron()
   {
@@ -53,19 +27,14 @@ int_cleanup()
     rm -rf /home/$USER/.fontconfig
     mkdir -p /home/$USER/.local/share/mail/hoaxdream
     mkdir -p /home/$USER/.local/var/service
-    mkdir -p /home/$USER/.config/dl/done
+    mkdir -p /home/$USER/.config/dl/torrent/completed
+    mkdir -p /home/$USER/.config/dl/torrent/incomplete
+    mkdir -p /home/$USER/.config/dl/others
     mkdir -p /home/$USER/.config/dl/music
     mkdir -p /home/$USER/.config/dl/vids
-    mkdir -p /home/$USER/.config/dl/telegram
-    mkdir -p /home/$USER/.config/docs
+    mkdir -p /home/$USER/.config/dl/docs
   }
 
-echo 'cp and mv progress'
-int_coreutil
-echo 'nnn file manager'
-int_nnn
-echo 'fix alias'
-int_fixalias
 echo 'cron'
 int_cron
 echo 'chown'

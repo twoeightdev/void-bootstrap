@@ -11,6 +11,7 @@ inst_dot()
     git --git-dir=$HOME/.config/dots/ --work-tree=$HOME checkout
     git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
   }
+
 # dwm,st,dmenu,startpage
 inst_repo()
   {
@@ -19,7 +20,6 @@ inst_repo()
     git clone https://github.com/hoaxdream/void-st ~/.config/st
     git clone https://github.com/hoaxdream/void-dmenu ~/.config/dmenu
     git clone https://github.com/hoaxdream/startpage ~/.config/startpage
-    git clone https://github.com/jarun/nnn ~/.config/nnn
     # make install
     cd ~/.config/dwm
     make && sudo make install
@@ -28,28 +28,10 @@ inst_repo()
     cd ~/.config/dmenu
     make && sudo make install
   }
-# fix alias
-inst_alias()
-  {
-    sed -i 's/cp="cpg -g"/cp="cp"/g' ~/.config/zsh/aliasrc
-    sed -i 's/mv="mvg -g"/mv="mv"/g' ~/.config/zsh/aliasrc
-  }
-# make directories
-inst_mkd()
-  {
-    mkdir ~/.config/dl
-    mkdir ~/.config/dl/torrent
-    mkdir ~/.config/dl/torrent/fin
-    mkdir ~/.config/dl/torrent/pending
-  }
 
 echo 'dotfiles'
 inst_dot
 echo 'repositories'
 inst_repo
-echo 'fix alias'
-inst_alias
-echo 'clean'
-inst_mkd
 
 echo 'Run sudo ./partcore then sudo ./partdata for fresh disk, otherwise just run sudo ./postinstall then reboot'
