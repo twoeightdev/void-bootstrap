@@ -22,7 +22,7 @@ inst_pkgs()
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils"
-    pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop"
+    pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf"
     pkgs="$pkgs base-devel libX11-devel libXft-devel libXinerama-devel"
     # mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
