@@ -23,10 +23,10 @@ int_cleanup()
     rm /home/$USER/.bashrc
     rm /home/$USER/.zshrc
     rm /home/$USER/.inputrc
-    rm /home/$USER/.wget-hsts
     rm -rf /home/$USER/.fontconfig
     mkdir -p /home/$USER/.local/share/mail/hoaxdream
     mkdir -p /home/$USER/.local/var/service
+    mkdir -p /home/$USER/.config/work/gitbuild
     mkdir -p /home/$USER/.config/dl/torrent/completed
     mkdir -p /home/$USER/.config/dl/torrent/incomplete
     mkdir -p /home/$USER/.config/dl/others
