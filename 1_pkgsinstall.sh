@@ -18,7 +18,7 @@ inst_pkgs()
     pkgs="$pkgs dejavu-fonts-ttf noto-fonts-ttf noto-fonts-emoji"
     pkgs="$pkgs liberation-fonts-ttf font-inconsolata-otf font-awesome"
     # others
-    pkgs="$pkgs yt-dlp ffmpeg maim sxiv xwallpaper ImageMagick"
+    pkgs="$pkgs calcurse yt-dlp ffmpeg maim sxiv xwallpaper ImageMagick"
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils"
