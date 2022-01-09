@@ -1,9 +1,9 @@
 #!/bin/sh
 # https://github.com/hoaxdream
-# author: hoaxdream
+# Author: hoaxdream
 USER=$(whoami)
 
-# cron
+# Cron
 int_cron()
   {
     mkdir ~/.config/cron
@@ -15,7 +15,7 @@ int_chown()
     sudo chown -R $USER:$USER /media/core/
     sudo chown -R $USER:$USER /media/data/
   }
-# cleanup
+# Cleanup
 int_cleanup()
   {
     rm /home/$USER/.bash_logout

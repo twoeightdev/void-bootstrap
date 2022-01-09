@@ -1,17 +1,17 @@
 #!/bin/sh
 # https://github.com/hoaxdream
-# author: hoaxdream
-# change the value of User in int_transmission
+# Author: hoaxdream
+# Change the value of User in int_transmission
 CORE_UUID=$(blkid -s UUID -o value /dev/nvme1n1p1)
 DATA_UUID=$(blkid -s UUID -o value /dev/sda1)
 
-# make dir for games and data
+# Make dir for games and data
 int_chdir()
   {
     cd /media
     mkdir core data
   }
-# dump UUID to fstab
+# Dump UUID to fstab
 int_uuid()
   {
 echo "# /dev/nvme1n1p1

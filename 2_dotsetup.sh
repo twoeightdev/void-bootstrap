@@ -1,8 +1,8 @@
 #!/bin/sh
 # https://github.com/hoaxdream
-# author: hoaxdream
+# Author: hoaxdream
 
-# install dots
+# Install dots
 inst_dot()
   {
     cd ~
@@ -12,15 +12,15 @@ inst_dot()
     git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
   }
 
-# dwm,st,dmenu,startpage
+# Dwm,st,dmenu,startpage
 inst_repo()
   {
-    # clone the repositories
+    # Clone the repositories
     git clone https://github.com/hoaxdream/void-dwm ~/.config/dwm
     git clone https://github.com/hoaxdream/void-st ~/.config/st
     git clone https://github.com/hoaxdream/void-dmenu ~/.config/dmenu
     git clone https://github.com/hoaxdream/startpage ~/.config/startpage
-    # make install
+    # Make install
     cd ~/.config/dwm
     make && sudo make install
     cd ~/.config/st
