@@ -6,7 +6,7 @@
 inst_pkgs()
   {
     # Xorg
-    pkgs="xorg-minimal xwininfo xprop xdpyinfo xset xsetroot xrdb xterm"
+    pkgs="xorg-minimal xorg-server-devel xwininfo xprop xdpyinfo xset xsetroot xrdb xterm"
     # Nvidia
     pkgs="$pkgs nvidia-libs-32bit vulkan-loader vulkan-loader-32bit"
     # Core
@@ -22,7 +22,7 @@ inst_pkgs()
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils"
-    pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf"
+    pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf upower"
     pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel libXinerama-devel"
     # Mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
