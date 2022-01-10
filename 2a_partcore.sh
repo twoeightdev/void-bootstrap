@@ -11,3 +11,5 @@ echo w
 ) | fdisk /dev/nvme1n1
 
 mkfs.ext4 /dev/nvme1n1p1
+
+echo '/dev/nvme1n1 parition done'

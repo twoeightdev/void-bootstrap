@@ -3,8 +3,7 @@
 # Author: hoaxdream
 
 # Void packages installation
-inst_pkgs()
-  {
+installpackages() {
     # Xorg
     pkgs="xorg-minimal xorg-server-devel xwininfo xprop xdpyinfo xset xsetroot xrdb xterm"
     # Nvidia
@@ -35,9 +34,9 @@ inst_pkgs()
     sudo xbps-install -Syu $pkgs
     # Services
     sudo ln -sf /etc/sv/cronie /var/service
-  }
+}
 
 echo 'install packages'
-inst_pkgs
+installpackages
 
-echo 'Packages installation completed please reboot and run ./dotsetup'
+echo 'Packages installation completed please run ./2_dotsetup.sh'

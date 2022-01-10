@@ -3,18 +3,16 @@
 # Author: hoaxdream
 
 # Install dots
-inst_dot()
-  {
+gitbarerepo() {
     cd ~
     echo "dots" >> .gitignore
     git clone --bare https://github.com/hoaxdream/void-dots.git $HOME/.config/dots
     git --git-dir=$HOME/.config/dots/ --work-tree=$HOME checkout
     git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
-  }
+}
 
 # Dwm,st,dmenu,startpage
-inst_repo()
-  {
+gitclonerepo() {
     # Clone the repositories
     git clone https://github.com/hoaxdream/void-dwm ~/.config/dwm
     git clone https://github.com/hoaxdream/void-st ~/.config/st
@@ -30,11 +28,12 @@ inst_repo()
     make && sudo make install
     cd ~/.config/slock
     make && sudo make install
-  }
+}
 
 echo 'dotfiles'
-inst_dot
-echo 'repositories'
-inst_repo
+gitbarerepo
 
-echo 'Run sudo ./partcore then sudo ./partdata for fresh disk, otherwise just run sudo ./postinstall then reboot'
+echo 'repositories'
+gitclonerepo
+
+echo 'Run sudo ./2a_partcore.sh then sudo ./2b_partdata.sh for fresh disk, otherwise just run sudo ./3_postinstall.sh'

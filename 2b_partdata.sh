@@ -11,3 +11,5 @@ echo w
 ) | fdisk /dev/sda
 
 mkfs.ext4 /dev/sda1
+
+echo '/dev/sda partition done'

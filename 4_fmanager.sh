@@ -3,21 +3,23 @@
 # Author: hoaxdream
 USER=$(whoami)
 
-# Cron
-int_cron()
-  {
+copycronjob() {
     mkdir ~/.config/cron
     cp ~/.config/work/backups/cronsaved ~/.config/cron/cronsaved
-  }
-# Chown /media
-int_chown()
-  {
+}
+
+chowndirectory() {
     sudo chown -R $USER:$USER /media/core/
     sudo chown -R $USER:$USER /media/data/
-  }
+}
+
+# Services
+setservice() {
+    sudo ln -sf /etc/sv/dbus /var/service
+}
+
 # Cleanup
-int_cleanup()
-  {
+finalize() {
     rm /home/$USER/.bash_logout
     rm /home/$USER/.bash_profile
     rm /home/$USER/.bashrc
@@ -33,11 +35,18 @@ int_cleanup()
     mkdir -p /home/$USER/.config/dl/music
     mkdir -p /home/$USER/.config/dl/vids
     mkdir -p /home/$USER/.config/dl/docs
-  }
+}
 
 echo 'cron'
-int_cron
+copycronjob
+
 echo 'chown'
-int_chown
+chowndirectory
+
+echo 'services'
+setservice
+
 echo 'clean up'
-int_cleanup
+finalize
+
+echo 'Installation completed, please reboot."
