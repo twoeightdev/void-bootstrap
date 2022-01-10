@@ -23,7 +23,7 @@ inst_pkgs()
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils"
     pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf"
-    pkgs="$pkgs base-devel libX11-devel libXft-devel libXinerama-devel"
+    pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel libXinerama-devel"
     # Mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
     # lib32's needed for lutris

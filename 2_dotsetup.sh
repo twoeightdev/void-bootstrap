@@ -19,6 +19,7 @@ inst_repo()
     git clone https://github.com/hoaxdream/void-dwm ~/.config/dwm
     git clone https://github.com/hoaxdream/void-st ~/.config/st
     git clone https://github.com/hoaxdream/void-dmenu ~/.config/dmenu
+    git clone https://github.com/hoaxdream/void-slock ~/.config/slock
     git clone https://github.com/hoaxdream/startpage ~/.config/startpage
     # Make install
     cd ~/.config/dwm
@@ -26,6 +27,8 @@ inst_repo()
     cd ~/.config/st
     make && sudo make install
     cd ~/.config/dmenu
+    make && sudo make install
+    cd ~/.config/slock
     make && sudo make install
   }
 
