@@ -21,7 +21,7 @@ installpackages() {
     pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils"
-    pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf upower"
+    pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf upower unclutter-xfixes"
     pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel libXinerama-devel"
     # Mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
