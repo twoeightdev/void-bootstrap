@@ -17,6 +17,7 @@ gitclonerepo() {
     git clone https://github.com/hoaxdream/void-dwm ~/.config/dwm
     git clone https://github.com/hoaxdream/void-st ~/.config/st
     git clone https://github.com/hoaxdream/void-dmenu ~/.config/dmenu
+    git clone https://github.com/hoaxdream/void-dwmblocks ~/.config/dwmblocks
     git clone https://github.com/hoaxdream/void-slock ~/.config/slock
     git clone https://github.com/hoaxdream/startpage ~/.config/startpage
     # Make install
@@ -25,6 +26,8 @@ gitclonerepo() {
     cd ~/.config/st
     make && sudo make install
     cd ~/.config/dmenu
+    make && sudo make install
+    cd ~/.config/dwmblocks
     make && sudo make install
     cd ~/.config/slock
     make && sudo make install
