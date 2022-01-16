@@ -2,6 +2,7 @@
 # https://github.com/hoaxdream
 # Author: hoaxdream
 USER=$(whoami)
+currentuser=$(who | awk 'NR==1{print $1}')
 
 copycronjob() {
     mkdir ~/.config/cron
@@ -9,8 +10,8 @@ copycronjob() {
 }
 
 chowndirectory() {
-    sudo chown -R $USER:$USER /media/core/
-    sudo chown -R $USER:$USER /media/data/
+    sudo chown -R $currentuser:$currentuser /media/core/
+    sudo chown -R $currentuser:$currentuser /media/data/
 }
 
 # Services
