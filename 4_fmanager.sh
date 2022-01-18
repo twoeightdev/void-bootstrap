@@ -33,9 +33,7 @@ finalize() {
     mkdir -p /home/$USER/.config/dl/torrent/completed
     mkdir -p /home/$USER/.config/dl/torrent/incomplete
     mkdir -p /home/$USER/.config/dl/others
-    mkdir -p /home/$USER/.config/dl/music
     mkdir -p /home/$USER/.config/dl/pics
-    mkdir -p /home/$USER/.config/dl/vids
     mkdir -p /home/$USER/.config/dl/docs
 }
 
