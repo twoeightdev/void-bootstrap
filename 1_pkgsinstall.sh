@@ -23,6 +23,7 @@ installpackages() {
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils"
     pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf upower unclutter-xfixes"
     pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel libXinerama-devel"
+    pkgs="$pkgs pandoc texlive"
     # Mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
     # lib32's needed for lutris
