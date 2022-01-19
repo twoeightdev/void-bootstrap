@@ -2,16 +2,11 @@
 # https://github.com/hoaxdream
 # Author: hoaxdream
 USER=$(whoami)
-currentuser=$(who | awk 'NR==1{print $1}')
 
+# Cron
 copycronjob() {
     mkdir ~/.config/cron
     cp ~/.config/work/backups/cronsaved ~/.config/cron/cronsaved
-}
-
-chowndirectory() {
-    sudo chown -R $currentuser:$currentuser /media/core/
-    sudo chown -R $currentuser:$currentuser /media/data/
 }
 
 # Services
@@ -39,9 +34,6 @@ finalize() {
 
 echo 'cron'
 copycronjob
-
-echo 'chown'
-chowndirectory
 
 echo 'services'
 setservice
