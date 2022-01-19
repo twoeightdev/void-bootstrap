@@ -49,4 +49,4 @@ setservice
 echo 'clean up'
 finalize
 
-echo 'Installation completed, please reboot."
+echo 'Installation completed, please reboot.'
