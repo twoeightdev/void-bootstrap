@@ -3,18 +3,10 @@
 # Author: hoaxdream
 USER=$(whoami)
 
-# Cron
-copycronjob() {
-    mkdir ~/.config/cron
-    cp ~/.config/work/backups/cronsaved ~/.config/cron/cronsaved
-}
-
-# Services
 setservice() {
     sudo ln -sf /etc/sv/dbus /var/service
 }
 
-# Cleanup
 finalize() {
     rm /home/$USER/.bash_logout
     rm /home/$USER/.bash_profile
@@ -32,13 +24,10 @@ finalize() {
     mkdir -p /home/$USER/.config/dl/docs
 }
 
-echo 'cron'
-copycronjob
-
-echo 'services'
+# Enable service.
 setservice
 
-echo 'clean up'
+# Final script, delte and make directories.
 finalize
 
 echo 'Installation completed, please reboot.'
