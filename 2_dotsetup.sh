@@ -12,7 +12,6 @@ gitbarerepo() {
 
 gitclonerepo() {
     # clone the repositories
-    mkdir -p $HOME/.config/dev
     cd $HOME/.config/dev
     git clone https://github.com/hoaxdream/void-dwm.git
     git clone https://github.com/hoaxdream/void-st.git
