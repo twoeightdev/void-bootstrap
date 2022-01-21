@@ -20,15 +20,15 @@ gitclonerepo() {
     git clone https://github.com/hoaxdream/void-slock.git
     git clone https://github.com/hoaxdream/startpage.git
     # cd to each directory and install
-    cd $HOME/.config/dev/dwm
+    cd $HOME/.config/dev/void-dwm
     make && sudo make install
-    cd $HOME/.config/dev/st
+    cd $HOME/.config/dev/void-st
     make && sudo make install
-    cd $HOME/.config/dev/dmenu
+    cd $HOME/.config/dev/void-dmenu
     make && sudo make install
-    cd $HOME/.config/dev/dwmblocks
+    cd $HOME/.config/dev/void-dwmblocks
     make && sudo make install
-    cd $HOME/.config/dev/slock
+    cd $HOME/.config/dev/void-slock
     make && sudo make install
 }
 
