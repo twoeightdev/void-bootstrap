@@ -2,6 +2,8 @@
 # https://github.com/hoaxdream
 # Author: hoaxdream
 
+repodir="$HOME/.config/dev"
+
 gitbarerepo() {
     cd ~
     echo "dots" >> .gitignore
@@ -11,15 +13,12 @@ gitbarerepo() {
 }
 
 gitclonerepo() {
-    # clone the repositories
-    cd $HOME/.config/dev
-    git clone https://github.com/hoaxdream/void-dwm.git
-    git clone https://github.com/hoaxdream/void-st.git
-    git clone https://github.com/hoaxdream/void-dmenu.git
-    git clone https://github.com/hoaxdream/void-dwmblocks.git
-    git clone https://github.com/hoaxdream/void-slock.git
-    git clone https://github.com/hoaxdream/startpage.git
-    # cd to each directory and install
+    cd $repodir
+    echo void-dwm void-st void-dmenu void-dwmblocks void-slock startpage | xargs -n1 |
+        xargs -I{} git clone https://github.com/hoaxdream/{} && echo "\033[0;32mSuccessful"
+}
+
+gitinstall() {
     cd $HOME/.config/dev/void-dwm
     make && sudo make install
     cd $HOME/.config/dev/void-st
@@ -38,4 +37,7 @@ gitbarerepo
 # Clone all suckless and startpage for qutebrowser.
 gitclonerepo
 
-echo 'Run sudo ./2a_partcore.sh then sudo ./2b_partdata.sh for fresh disk, otherwise just run sudo ./3_postinstall.sh'
+# Make and install.
+gitinstall
+
+echo '\033[0;32mRun sudo ./2a_partcore.sh then sudo ./2b_partdata.sh for fresh disk, otherwise just run sudo ./3_postinstall.sh'

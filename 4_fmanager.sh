@@ -29,4 +29,4 @@ setservice
 # Final script, delte and make directories.
 finalize
 
-echo 'Installation completed, please reboot.'
+echo '\033[0;32mInstallation completed, please reboot.'

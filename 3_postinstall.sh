@@ -25,4 +25,4 @@ setdirectory
 # Set UUID of other hdd/sdd in fstab.
 getuuid
 
-echo 'Run ./4_fmanager.sh and reboot.'
+echo '\033[0;32mRun ./4_fmanager.sh and reboot.'

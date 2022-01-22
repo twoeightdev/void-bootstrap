@@ -12,4 +12,4 @@ echo w
 
 mkfs.ext4 /dev/sda1
 
-echo '/dev/sda partition done'
+echo '\033[0;32m/dev/sda partition done'

@@ -12,4 +12,4 @@ echo w
 
 mkfs.ext4 /dev/nvme1n1p1
 
-echo '/dev/nvme1n1 parition done'
+echo '\033[0;32m/dev/nvme1n1 parition done'

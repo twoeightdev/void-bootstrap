@@ -38,4 +38,4 @@ installpackages() {
 # Install all listed packages.
 installpackages
 
-echo 'Packages installation completed please run ./2_dotsetup.sh'
+echo '\033[0;32mPackages installation completed please run ./2_dotsetup.sh'
