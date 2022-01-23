@@ -12,6 +12,6 @@ This is my personal script used after a fresh arch linux installation.
   - $ sudo ./2a_partcore   # Run only for fresh disk
   - $ sudo ./2b_partdata   # Run only for fresh disk
   - $ sudo ./3_postinstall
-  - $ ./4_fmanager
+  - $ ./4_finalize
   - $ reboot
 ```
