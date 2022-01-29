@@ -1,6 +1,8 @@
 #!/bin/sh
 # https://github.com/hoaxdream
 # Author: hoaxdream
+
+# Change to your username
 name="hoaxdream"
 
 # Change the value according to your hdd/sdd.
