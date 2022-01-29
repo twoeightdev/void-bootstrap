@@ -85,11 +85,11 @@ all() {
 }
 
 mkall() {
-    cd $dwmdir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
-    cd $stdir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
-    cd $dwmblocksdir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
-    cd $dmenudir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
-    cd $slockdir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
+    cd $dwmdir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
+    cd $stdir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
+    cd $dwmblocksdir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
+    cd $dmenudir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
+    cd $slockdir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
 }
 
 dwm() {
@@ -123,23 +123,23 @@ startpage() {
 }
 
 mkdwm() {
-    cd $dwmdir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
+    cd $dwmdir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
 }
 
 mkst() {
-    cd $stdir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
+    cd $stdir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
 }
 
 mkdwmblocks() {
-    cd $dwmblocksdir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
+    cd $dwmblocksdir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
 }
 
 mkdmenu() {
-    cd $dmenudir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
+    cd $dmenudir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
 }
 
 mkslock() {
-    cd $slockdir && make && sudo make install >/dev/null 2>&1 || echo "Clone the repo first."
+    cd $slockdir >/dev/null 2>&1 && make && sudo make install || echo "Clone the repo first."
 }
 
 finalize() {
