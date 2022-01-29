@@ -29,7 +29,7 @@ menu() {
     echo    "mkdmenu:       install dmenu"
     echo    "mkslock:       install slock"
     echo    " "
-    echo    "all:           clone all suckless repo"
+    echo    "all:           git clone all suckless repo"
     echo    "mkall:         install all suckless"
     echo    "finalize       clean up"
     echo    " "
