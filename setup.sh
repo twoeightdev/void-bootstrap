@@ -148,6 +148,7 @@ finalize() {
     rm /home/$name/.bashrc
     rm /home/$name/.zshrc
     rm /home/$name/.inputrc
+    mkdir -p /home/$name/.config/cron
     mkdir -p /home/$name/.local/share/mail/hoaxdream
     mkdir -p /home/$name/.local/var/service
     mkdir -p /home/$name/.config/dl/torrent/completed
@@ -155,6 +156,7 @@ finalize() {
     mkdir -p /home/$name/.config/dl/others
     mkdir -p /home/$name/.config/dl/pics
     mkdir -p /home/$name/.config/dl/docs
+    cp /home/$name/.config/dev/cronsaved /home/$name/.config/cron/cronsaved
 }
 
 if [ -n "$1" ]; then

@@ -2,18 +2,13 @@
 # https://github.com/hoaxdream
 # Author: hoaxdream
 
-# Change to your username
-name="hoaxdream"
-
 # Change the value according to your hdd/sdd.
 CORE_UUID=$(blkid -s UUID -o value /dev/nvme1n1p1)
 DATA_UUID=$(blkid -s UUID -o value /dev/sda1)
 
-setdirectory() {
+makedir() {
     cd /media
     mkdir core data
-    chown -R $name:$name /media/core
-    chown -R $name:$name /media/data
 }
 
 getuuid() {
@@ -34,7 +29,7 @@ service() {
 }
 
 # Make directory for other hdd/sdd.
-setdirectory
+makedir
 
 # Set UUID of other hdd/sdd in fstab.
 getuuid
