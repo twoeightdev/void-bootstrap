@@ -33,7 +33,7 @@ menu() {
     echo    "mkall:         install all suckless"
     echo    "finalize       clean up"
     echo    " "
-    echo    "NOTE:  install dot first and finalize after everything else."
+    echo    "NOTE:  install dot first then finalize after everything else."
 }
 
 dot() {
