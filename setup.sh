@@ -67,10 +67,11 @@ pkg() {
     # mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
     # lib32's needed for lutris
-    pkgs="$pkgs wine giflib-32bit libpng-32bit gnutls-32bit libmpg123-32bit libopenal-32bit"
-    pkgs="$pkgs v4l-utils-32bit libpulseaudio-32bit libjpeg-turbo-32bit libXcomposite-32bit"
-    pkgs="$pkgs libgcrypt-32bit libXinerama-32bit ocl-icd ocl-icd-32bit"
-    pkgs="$pkgs libxslt-32bit libva-32bit gst-plugins-base1-32bit lutris"
+    pkgs="$pkgs wine wine-32bit libpng-32bit gnutls-devel gnutls-32bit gnutls-devel-32bit libmpg123-32bit"
+    pkgs="$pkgs libopenal-32bit v4l-utils-32bit libpulseaudio-32bit libjpeg-turbo-32bit libXcomposite-32bit"
+    pkgs="$pkgs libXinerama-32bit giflib-32bit ocl-icd ocl-icd-32bit libgpg-error-devel libgpg-error-devel-32bit"
+    pkgs="$pkgs Vulkan-Headers Vulkan-Tools Vulkan-ValidationLayers Vulkan-ValidationLayers-32bit"
+    pkgs="$pkgs libwine-32bit libgcrypt-32bit libxslt-32bit libva-32bit gst-plugins-base1-32bit lutris"
     # install pkgs
     sudo xbps-install -Syu $pkgs
 }
