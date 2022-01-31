@@ -19,6 +19,16 @@ UUID=$CORE_UUID /media/core ext4 rw,user,exec 0 0
 UUID=$DATA_UUID /media/data ext4 rw,user,exec 0 0" | tee -a /etc/fstab >/dev/null
 }
 
+setulimit() {
+    ed -s /etc/security/limits.conf << EOF
+    $ i
+hoaxdream       soft    nofile          1048576
+hoaxdream       hard    nofile          1048576
+.
+wq
+EOF
+}
+
 copypicom() {
     cp /home/$name/.config/dev/picom.conf /etc/xdg/picom.conf
 }
@@ -33,6 +43,9 @@ makedir
 
 # Set UUID of other hdd/sdd in fstab.
 getuuid
+
+# Set ulimit for some lutris games to work.
+setulimit
 
 # Copy picom config
 copypicom
