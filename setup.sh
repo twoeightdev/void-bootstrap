@@ -50,7 +50,7 @@ pkg() {
     # nvidia
     pkgs="$pkgs nvidia-libs-32bit vulkan-loader vulkan-loader-32bit"
     # core
-    pkgs="$pkgs xcape setxkbmap mlocate readline-devel lm_sensors pkg-config man-db wget zip unzip unrar "
+    pkgs="$pkgs xcape setxkbmap efivar mlocate readline-devel lm_sensors pkg-config man-db wget zip unzip unrar "
     pkgs="$pkgs dosfstools ntfs-3g xdg-user-dirs xtools xdg-utils xclip xdo xdotool mediainfo elogind bc tree"
     # audio
     pkgs="$pkgs pulseaudio alsa-plugins-pulseaudio pulsemixer pamixer"
