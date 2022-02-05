@@ -29,6 +29,11 @@ PART=1
 EOF
 }
 
+postefi() {
+    sed -i 's|Void Linux with kernel ${major_version}|Void|g' /etc/kernel.d/post-install/50-efibootmgr
+    sed -i 's|Void Linux with kernel ${major_version}|Void|g' /etc/kernel.d/post-remove/50-efibootmgr
+}
+
 setulimit() {
     ed -s /etc/security/limits.conf << EOF
     $ i
@@ -52,6 +57,9 @@ getuuid
 
 # Set efibootmgr kernel hook
 efikernelhook
+
+# Efibootmgr post install and remove
+postefi
 
 # Set ulimit for some lutris games to work.
 setulimit
