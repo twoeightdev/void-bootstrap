@@ -29,10 +29,6 @@ wq
 EOF
 }
 
-copypicom() {
-    cp /home/$name/.config/dev/picom.conf /etc/xdg/picom.conf
-}
-
 service() {
     ln -sf /etc/sv/dbus /var/service
     ln -sf /etc/sv/cronie /var/service
@@ -46,9 +42,6 @@ getuuid
 
 # Set ulimit for some lutris games to work.
 setulimit
-
-# Copy picom config
-copypicom
 
 # Set dbus service
 service
