@@ -59,7 +59,7 @@ pkg() {
     pkgs="$pkgs liberation-fonts-ttf font-inconsolata-otf font-awesome"
     # others
     pkgs="$pkgs calcurse yt-dlp ffmpeg maim sxiv xwallpaper ImageMagick"
-    pkgs="$pkgs newsboat picom mpd mpc mpv ncmpcpp"
+    pkgs="$pkgs emacs-x11 newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie jq"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc bat moreutils"
     pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf upower unclutter-xfixes"
