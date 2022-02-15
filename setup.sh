@@ -38,10 +38,8 @@ menu() {
 
 dot() {
     cd ~
-    echo "dots" >> .gitignore
     git clone --bare https://github.com/hoaxdream/void-dots.git $HOME/.config/dots
     git --git-dir=$HOME/.config/dots/ --work-tree=$HOME checkout
-    git --git-dir=$HOME/.config/dots/ --work-tree=$HOME config --local status.showUntrackedFiles no
 }
 
 pkg() {
@@ -152,6 +150,7 @@ finalize() {
     mkdir -p /home/$name/.config/cron
     mkdir -p /home/$name/.local/share/mail/hoaxdream
     mkdir -p /home/$name/.local/var/service
+    mkdir -p /home/$name/.config/dev/rsync/org
     mkdir -p /home/$name/.config/dl/torrent/completed
     mkdir -p /home/$name/.config/dl/torrent/incomplete
     mkdir -p /home/$name/.config/dl/others
