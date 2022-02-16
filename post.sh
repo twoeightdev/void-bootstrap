@@ -3,7 +3,7 @@
 # Author: hoaxdream
 
 postremove() {
-    cat >~/ignore.conf <<'EOF'
+    cat >/etc/xbps.d/99-ignore.conf <<'EOF'
 ignorepkg=btrfs-progs
 ignorepkg=f2fs-tools
 ignorepkg=ipw2100-firmware
@@ -18,6 +18,7 @@ EOF
 pkg() {
     pkgs="btrfs-progs f2fs-tools ipw2100-firmware ipw2200-firmware"
     pkgs="$pkgs linux-firmware-amd linux-firmware-broadcom rtkit zd1211-firmware"
+    sudo xbps-remove -Ryco $pkgs
 }
 
 # Set ignore pkg list
