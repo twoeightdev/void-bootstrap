@@ -157,6 +157,7 @@ finalize() {
     mkdir -p /home/$name/.config/dl/pics
     mkdir -p /home/$name/.config/dl/docs
     cp /home/$name/.config/dev/cronsaved /home/$name/.config/cron/cronsaved
+    echo '\033[0;32mRun sudo ./root.sh'
 }
 
 if [ -n "$1" ]; then

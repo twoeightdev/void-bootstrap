@@ -25,3 +25,5 @@ postremove
 
 # Uninstall ignore pkg list
 pkg
+
+echo '\033[0;32mDone and reboot.'

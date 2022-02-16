@@ -67,4 +67,4 @@ setulimit
 # Set dbus service
 service
 
-echo '\033[0;32mRun ./4_fmanager.sh and reboot.'
+echo '\033[0;32mRun sudo ./post.sh and reboot.'
