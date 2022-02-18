@@ -34,6 +34,15 @@ postefi() {
     sed -i 's|Void Linux with kernel ${major_version}|Void|g' /etc/kernel.d/post-remove/50-efibootmgr
 }
 
+powersave() {
+    cat > /etc/modprobe.d/audio_powersave.conf << EOF
+# test /etc/modprobe.d/audio_powersave.conf
+options snd_ac97_codec power_save=0
+# For HD audio cards:
+options snd_hda_intel power_save=0
+EOF
+}
+
 setulimit() {
     ed -s /etc/security/limits.conf << EOF
     $ i
@@ -60,6 +69,9 @@ efikernelhook
 
 # Efibootmgr post install and remove
 postefi
+
+# Disable powersave
+powersave
 
 # Set ulimit for some lutris games to work.
 setulimit
