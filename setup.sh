@@ -57,7 +57,7 @@ pkg() {
     pkgs="$pkgs liberation-fonts-ttf font-inconsolata-otf font-awesome"
     # others
     pkgs="$pkgs calcurse yt-dlp ffmpeg maim sxiv xwallpaper ImageMagick"
-    pkgs="$pkgs emacs-x11 rsync newsboat picom mpd mpc mpv ncmpcpp"
+    pkgs="$pkgs rsync newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie jq"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc bat moreutils"
     pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf upower unclutter-xfixes"
@@ -151,7 +151,7 @@ finalize() {
     mkdir -p /home/$name/.config/cron
     mkdir -p /home/$name/.local/share/mail/hoaxdream
     mkdir -p /home/$name/.local/var/service
-    mkdir -p /home/$name/.config/dev/rsync/org
+    mkdir -p /home/$name/.config/dev/rsync/notes
     mkdir -p /home/$name/.config/dl/torrent/completed
     mkdir -p /home/$name/.config/dl/torrent/incomplete
     mkdir -p /home/$name/.config/dl/others
