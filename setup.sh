@@ -54,7 +54,7 @@ pkg() {
     pkgs="$pkgs pulseaudio alsa-plugins-pulseaudio pulsemixer pamixer"
     # fonts
     pkgs="$pkgs dejavu-fonts-ttf noto-fonts-ttf noto-fonts-emoji"
-    pkgs="$pkgs liberation-fonts-ttf font-inconsolata-otf font-awesome"
+    pkgs="$pkgs liberation-fonts-ttf font-inconsolata-otf"
     # others
     pkgs="$pkgs calcurse yt-dlp ffmpeg maim sxiv xwallpaper ImageMagick"
     pkgs="$pkgs rsync newsboat picom mpd mpc mpv ncmpcpp"
