@@ -57,9 +57,9 @@ pkg() {
     pkgs="$pkgs liberation-fonts-ttf font-inconsolata-otf"
     # others
     pkgs="$pkgs calcurse yt-dlp ffmpeg maim sxiv xwallpaper ImageMagick"
-    pkgs="$pkgs rsync newsboat picom mpd mpc mpv ncmpcpp"
-    pkgs="$pkgs zathura zathura-pdf-mupdf poppler python3-adblock cronie jq"
-    pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc bat moreutils"
+    pkgs="$pkgs rsync task python3-tasklib newsboat picom mpd mpc mpv ncmpcpp"
+    pkgs="$pkgs pandoc tectonic zathura zathura-pdf-mupdf poppler python3-adblock cronie"
+    pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils jq"
     pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf upower unclutter-xfixes"
     pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel libXinerama-devel"
     # mail
