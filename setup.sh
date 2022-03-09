@@ -60,7 +60,7 @@ pkg() {
     pkgs="$pkgs rsync newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs pandoc tectonic zathura zathura-pdf-mupdf poppler python3-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils jq"
-    pkgs="$pkgs qutebrowser qrencode steam Signal-Desktop lf upower unclutter-xfixes"
+    pkgs="$pkgs qutebrowser qrencode steam lf upower unclutter-xfixes"
     pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel libXinerama-devel"
     # mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
