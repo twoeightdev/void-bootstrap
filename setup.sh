@@ -48,7 +48,7 @@ pkg() {
     # nvidia
     pkgs="$pkgs nvidia-libs-32bit vulkan-loader vulkan-loader-32bit"
     # core
-    pkgs="$pkgs xcape setxkbmap efivar mlocate readline-devel lm_sensors pkg-config man-db wget zip unzip unrar "
+    pkgs="$pkgs xcape setxkbmap efivar mlocate lm_sensors pkg-config man-db wget zip unzip unrar "
     pkgs="$pkgs dosfstools ntfs-3g xdg-user-dirs xtools xdg-utils xclip xdo xdotool mediainfo elogind bc tree"
     # audio
     pkgs="$pkgs pulseaudio alsa-plugins-pulseaudio pulsemixer pamixer"
@@ -60,7 +60,7 @@ pkg() {
     pkgs="$pkgs rsync newsboat picom mpd mpc mpv ncmpcpp"
     pkgs="$pkgs pandoc tectonic zathura zathura-pdf-mupdf poppler python3-adblock cronie"
     pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils jq"
-    pkgs="$pkgs qutebrowser qrencode steam lf upower unclutter-xfixes"
+    pkgs="$pkgs qutebrowser chromium-widevine qrencode steam lf upower unclutter-xfixes"
     pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel libXinerama-devel"
     # mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
@@ -68,7 +68,7 @@ pkg() {
     pkgs="$pkgs wine wine-32bit wine-devel wine-devel-32bit wine-mono wine-gecko libmpg123-32bit"
     pkgs="$pkgs libopenal-32bit v4l-utils-32bit libpulseaudio-32bit libjpeg-turbo-32bit libXcomposite-32bit"
     pkgs="$pkgs libXinerama-32bit giflib-32bit ocl-icd ocl-icd-32bit libgpg-error-devel libgpg-error-devel-32bit"
-    pkgs="$pkgs sqlite-32bit libpng-32bit gnutls-devel gnutls-32bit gnutls-devel-32bit"
+    pkgs="$pkgs sqlite-32bit libpng-32bit readline readline-devel gnutls-devel gnutls-32bit gnutls-devel-32bit"
     pkgs="$pkgs Vulkan-Headers Vulkan-Tools Vulkan-ValidationLayers Vulkan-ValidationLayers-32bit"
     pkgs="$pkgs libwine-32bit libgcrypt-32bit libxslt-32bit libva-32bit gst-plugins-base1-32bit lutris"
     # install pkgs

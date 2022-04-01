@@ -12,6 +12,7 @@ ignorepkg=linux-firmware-amd
 ignorepkg=linux-firmware-broadcom
 ignorepkg=rtkit
 ignorepkg=zd1211-firmware
+ignorepkg=chromium
 EOF
 }
 
