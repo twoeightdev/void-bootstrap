@@ -13,4 +13,5 @@ This is my personal script used after a fresh arch linux installation.
   - $ ./setup.sh        # You only need this, install dot first
   - $ sudo ./root.sh    # Needs to be run as root configured for my system
   - $ sudo reboot
+  - $ sudo ./efi.sh     # Last reboot
 ```
