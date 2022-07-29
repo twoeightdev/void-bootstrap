@@ -29,11 +29,6 @@ PART=1
 EOF
 }
 
-postefi() {
-    sed -i 's|Void Linux with kernel ${major_version}|Void|g' /etc/kernel.d/post-install/50-efibootmgr
-    sed -i 's|Void Linux with kernel ${major_version}|Void|g' /etc/kernel.d/post-remove/50-efibootmgr
-}
-
 powersave() {
     cat > /etc/modprobe.d/audio_powersave.conf << EOF
 # test /etc/modprobe.d/audio_powersave.conf
@@ -66,9 +61,6 @@ getuuid
 
 # Set efibootmgr kernel hook
 efikernelhook
-
-# Efibootmgr post install and remove
-postefi
 
 # Disable powersave
 powersave
