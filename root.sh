@@ -29,6 +29,10 @@ PART=1
 EOF
 }
 
+pamsession() {
+    echo "-session optional pam_rundir.so" | tee -a /etc/pam.d/system-login > /dev/null
+}
+
 powersave() {
     cat > /etc/modprobe.d/audio_powersave.conf << EOF
 # test /etc/modprobe.d/audio_powersave.conf
@@ -61,6 +65,9 @@ getuuid
 
 # Set efibootmgr kernel hook
 efikernelhook
+
+# Let pam create the directory for all users on login
+pamsession
 
 # Disable powersave
 powersave
