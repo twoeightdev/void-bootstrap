@@ -17,6 +17,7 @@ menu() {
     echo    "dot:           install my dotfiles"
     echo    "pkg:           install packages"
     echo    " "
+    echo    "bspwm          bspwm as window manager"
     echo    "dwm:           git clone dwm"
     echo    "st:            git clone st"
     echo    "dwmblocks:     git clone dwmblocks"
@@ -44,12 +45,14 @@ dot() {
 
 pkg() {
     # xorg
-    pkgs="xorg-minimal xorg-server-devel xwininfo xprop xdpyinfo xset xsetroot xrdb xterm"
+    pkgs="xorg-minimal xorg-server-devel xwininfo xprop xdpyinfo xset"
+    pkgs="$pkgs xsetroot xrdb"
     # nvidia
     pkgs="$pkgs nvidia-libs-32bit vulkan-loader vulkan-loader-32bit"
     # core
-    pkgs="$pkgs xcape setxkbmap efivar mlocate lm_sensors pkg-config man-db wget zip unzip unrar "
-    pkgs="$pkgs dosfstools ntfs-3g xdg-user-dirs xtools xdg-utils xclip xdo xdotool mediainfo elogind bc tree"
+    pkgs="$pkgs xcape setxkbmap efivar mlocate lm_sensors pkg-config"
+    pkgs="$pkgs man-db wget zip unzip unrar ntfs-3g xdg-user-dirs"
+    pkgs="$pkgs xdg-utils xclip xdo xdotool mediainfo bc tree"
     # audio
     pkgs="$pkgs pulseaudio alsa-plugins-pulseaudio pulsemixer pamixer"
     # fonts
@@ -58,21 +61,31 @@ pkg() {
     # others
     pkgs="$pkgs calcurse yt-dlp ffmpeg maim sxiv xwallpaper ImageMagick"
     pkgs="$pkgs rsync newsboat picom mpd mpc mpv ncmpcpp"
-    pkgs="$pkgs pandoc tectonic zathura zathura-pdf-mupdf poppler python3-adblock cronie"
-    pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils jq"
-    pkgs="$pkgs qutebrowser chromium-widevine qrencode steam lf upower unclutter-xfixes"
-    pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel libXinerama-devel"
+    pkgs="$pkgs pandoc tectonic zathura zathura-pdf-mupdf poppler"
+    pkgs="$pkgs python3-adblock cronie"
+    pkgs="$pkgs dunst libnotify gucharmap htop transmission tremc moreutils"
+    pkgs="$pkgs jq qutebrowser chromium-widevine qrencode steam lf upower"
+    pkgs="$pkgs base-devel libXrandr-devel libX11-devel libXft-devel"
+    pkgs="$pkgs libXinerama-devel"
     # mail
     pkgs="$pkgs neomutt notmuch isync msmtp"
     # lib32's needed for lutris
-    pkgs="$pkgs wine wine-32bit wine-devel wine-devel-32bit wine-mono wine-gecko libmpg123-32bit"
-    pkgs="$pkgs libopenal-32bit v4l-utils-32bit libpulseaudio-32bit libjpeg-turbo-32bit libXcomposite-32bit"
-    pkgs="$pkgs libXinerama-32bit giflib-32bit ocl-icd ocl-icd-32bit libgpg-error-devel libgpg-error-devel-32bit"
-    pkgs="$pkgs sqlite-32bit libpng-32bit readline readline-devel gnutls-devel gnutls-32bit gnutls-devel-32bit"
-    pkgs="$pkgs Vulkan-Headers Vulkan-Tools Vulkan-ValidationLayers Vulkan-ValidationLayers-32bit"
-    pkgs="$pkgs libwine-32bit libgcrypt-32bit libxslt-32bit libva-32bit gst-plugins-base1-32bit lutris"
+    pkgs="$pkgs wine wine-32bit wine-devel wine-devel-32bit wine-mono"
+    pkgs="$pkgs wine-gecko libmpg123-32bit libopenal-32bit v4l-utils-32bit"
+    pkgs="$pkgs libpulseaudio-32bit libjpeg-turbo-32bit libXcomposite-32bit"
+    pkgs="$pkgs libXinerama-32bit giflib-32bit ocl-icd ocl-icd-32bit"
+    pkgs="$pkgs libgpg-error-devel libgpg-error-devel-32bit sqlite-32bit"
+    pkgs="$pkgs libpng-32bit readline readline-devel gnutls-devel"
+    pkgs="$pkgs gnutls-32bit gnutls-devel-32bit Vulkan-Headers Vulkan-Tools"
+    pkgs="$pkgs Vulkan-ValidationLayers Vulkan-ValidationLayers-32bit"
+    pkgs="$pkgs libwine-32bit libgcrypt-32bit libxslt-32bit libva-32bit"
+    pkgs="$pkgs gst-plugins-base1-32bit lutris"
     # install pkgs
     sudo xbps-install -Syu $pkgs
+}
+
+bspwm() {
+    sudo xbps-install -Syu bspwm sxhkd
 }
 
 all() {
