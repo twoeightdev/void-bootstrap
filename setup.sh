@@ -86,7 +86,7 @@ pkg() {
 }
 
 bspwm() {
-    sudo xbps-install -Syu bspwm sxhkd
+    sudo xbps-install -Syu bspwm sxhkd alacritty
 }
 
 all() {
