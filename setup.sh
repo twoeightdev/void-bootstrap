@@ -53,6 +53,7 @@ pkg() {
     pkgs="$pkgs xcape setxkbmap efivar mlocate lm_sensors pkg-config"
     pkgs="$pkgs man-db wget zip unzip unrar ntfs-3g xdg-user-dirs"
     pkgs="$pkgs xdg-utils xclip xdo xdotool mediainfo bc tree"
+    pkgs="$pkgs seatd pam_rundir"
     # audio
     pkgs="$pkgs pulseaudio alsa-plugins-pulseaudio pulsemixer pamixer"
     # fonts

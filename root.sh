@@ -54,6 +54,7 @@ EOF
 
 service() {
     ln -sf /etc/sv/dbus /var/service
+    ln -sf /etc/sv/seatd /var/service
     ln -sf /etc/sv/cronie /var/service
 }
 
